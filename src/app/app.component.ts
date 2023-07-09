@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EditService } from '@progress/kendo-angular-grid/editing-directives/edit-service.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,41 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'prima-athlete';
+  public gridData = [
+    {
+      productId: 5,
+      productName: 'Air Force 1',
+      unitPrice: 100,
+      category: {
+        categoryId: 1,
+        categoryName: 'Mens / Shoes'
+      }
+    },
+    {
+      productId: 2,
+      productName: 'Nike Pro',
+      unitPrice: 30,
+      category: {
+        categoryId: 2,
+        categoryName: "Women's / Shorts"
+      }
+    },
+    {
+      productId: 3,
+      productName: 'Nike Pants',
+      unitPrice: 50,
+      category: {
+        categoryId: 3,
+        categoryName: "Men's / Shorts"
+      }
+    },
+  ]
+
+  removeRow(dataItem:any): void {
+    const rowIndex = this.gridData.indexOf(dataItem);
+    if(rowIndex !== -1) {
+      this.gridData.splice(rowIndex,1)
+    }
+  }
+
 }

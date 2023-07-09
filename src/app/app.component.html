@@ -1,1 +1,20 @@
 <!-- <kendo-calendar></kendo-calendar> -->
+
+<kendo-grid [sortable]="true" [data]="gridData" [selectable]="true" [height]="200">
+
+  <kendo-grid-checkbox-column [showSelectAll]="true" title="Default check" >
+  </kendo-grid-checkbox-column>
+  
+  <kendo-grid-column field="productId" title="ID"> </kendo-grid-column>
+  <kendo-grid-column field="productName" title="Name"> </kendo-grid-column>
+  <kendo-grid-column field="category.categoryName" title="Category"> </kendo-grid-column>
+  <kendo-grid-column field="unitPrice" title="Price"> </kendo-grid-column>
+
+  <kendo-grid-command-column title="command">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <button kendoGridRemoveCommand (click)="removeRow(dataItem)">Remove</button>
+     </ng-template>
+  </kendo-grid-command-column>
+
+</kendo-grid>
+
