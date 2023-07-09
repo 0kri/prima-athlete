@@ -1,6 +1,6 @@
 <!-- <kendo-calendar></kendo-calendar> -->
 
-<kendo-grid [sortable]="true" [data]="gridData" [selectable]="true" [height]="200">
+<kendo-grid [sortable]="true" [data]="gridData" [selectable]="true" [pageable]="true" [pageSize]="2">
 
   <kendo-grid-checkbox-column [showSelectAll]="true" title="Default check" >
   </kendo-grid-checkbox-column>
@@ -12,6 +12,7 @@
 
   <kendo-grid-command-column title="command">
     <ng-template kendoGridCellTemplate let-dataItem>
+        <button kendoGridEditCommand [primary]="true">Edit</button>
         <button kendoGridRemoveCommand (click)="removeRow(dataItem)">Remove</button>
      </ng-template>
   </kendo-grid-command-column>

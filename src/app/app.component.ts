@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EditService } from '@progress/kendo-angular-grid/editing-directives/edit-service.interface';
+import { EditEvent } from '@progress/kendo-angular-grid';
 
 @Component({
   selector: 'app-root',
